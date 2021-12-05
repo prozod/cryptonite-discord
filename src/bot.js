@@ -1,6 +1,5 @@
 require('dotenv').config()
 const { Intents, Client } = require('discord.js')
-// const getCryptoCoin = require('../getCrypto')
 const fetchCoin = require('../fetchCoin')
 
 ////////////////////////////////
@@ -20,7 +19,7 @@ client.on('messageCreate', async (message) => {
         const coin = await fetchCoin(msg)
         const nf = new Intl.NumberFormat('en-US')
         const pf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
-        console.log('COI',coin);
+        console.log('COI', coin);
         if (coin == undefined) {
             console.log('ERROR');
             message.reply(`**Cannot find "${msg}".**\nPlease ensure that the currency you're looking for written correctly.\nNo symbols allowed.`)
@@ -40,5 +39,7 @@ client.on('messageCreate', async (message) => {
     }
 })
 
-client.login(process.env.DISCORDJS_TOKEN)
+    (async () => {
+        client.login(process.env.DISCORDJS_TOKEN)
+    })();
 
