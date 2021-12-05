@@ -39,7 +39,5 @@ client.on('messageCreate', async (message) => {
     }
 })
 
-    (async () => {
-        Client.login(process.env.DISCORDJS_TOKEN)
-    })();
+client.login(process.env.DISCORDJS_TOKEN)
 
