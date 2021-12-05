@@ -32,7 +32,7 @@ client.on('messageCreate', async (message) => {
             } else {
                 (price).toFixed(6)
             }
-            message.reply(`**${coin.name} (${coin.symbol})** is currently **${pf.format(price)}**\n\n- Max supply is ${coin.max_supply ? nf.format(coin.max_supply) : nf.format(coin.total_supply)} coins\n- Circulating supply is ${nf.format(coin.circulating_supply)} coins\n- Market cap is ${statsQuote.market_cap}\n- Daily percentual change is ${(statsQuote.percent_change_24h).toFixed(2)}%\n- Weekly percentual change is ${(statsQuote.percent_change_7d).toFixed(2)}%`)
+            message.reply(`**${coin.name} (${coin.symbol})** is currently **${pf.format(price)}**\n\n- Max supply is ${coin.max_supply ? nf.format(coin.max_supply) : nf.format(coin.total_supply)} coins\n- Circulating supply is ${nf.format(coin.circulating_supply)} coins\n- Market cap is ${pf.format(statsQuote.market_cap)}\n- Daily percentual change is ${(statsQuote.percent_change_24h).toFixed(2)}%\n- Weekly percentual change is ${(statsQuote.percent_change_7d).toFixed(2)}%`)
                 .then(() => console.log(`Replied to "${message.content}" from ${message.author.tag}`))
                 .catch(console.error);
         }
