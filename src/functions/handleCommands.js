@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const clientId = process.env.DISCORD_CLIENT_ID;
 const guildId = process.env.DISCORD_GUILD_ID;
-// const guildId = process.env.DISCORD_GUILD_ID && process.env.DISCORD_GUILD_ID_DEV;
+// const guildId = process.env.DISCORD_GUILD_ID_DEV; // for dev server
 const token = process.env.DISCORDJS_TOKEN;
 
 module.exports = (client) => {
